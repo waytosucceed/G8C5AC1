@@ -1,0 +1,196 @@
+<html>
+    <head> <title>Class Activity 1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      
+        <style>
+
+            #storydiv { 
+                height: 100%;
+                position: relative;   
+                text-align:center;      
+              }
+                      
+            #storydiv p {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            
+            .maindiv{
+                border:5px ridge rgb(12, 96, 206);
+                margin:1%;
+                border-radius:20px
+            }
+
+            p{
+                font-size:30px;
+              
+                font-weight: bold;
+            }
+
+           
+
+            #nextbtn, #backbtn, #newbtn{
+                width: 25%;
+                font-size:20px;
+                margin-right: 5%;
+                position: relative;
+                
+            }
+
+            #backbtn, #newbtn{
+                display:none;
+            }
+
+            #family{
+                width:95%;
+                height:95%;
+            }
+
+            #about{
+                font-weight: bold;
+                font-size:40px;
+                color:rgb(7, 7, 89)
+            }
+
+            #story{ 
+                font-size: 22px;
+                border-radius: 20px;
+               
+            }
+
+            .imgdiv{
+                position:relative;
+               text-align: left;
+               margin-top: 1%;
+            }
+         
+        
+        </style>
+</head>
+
+    <body> 
+        <div class="header" style="width:100%; box-shadow:5px 5px 10px rgb(0, 0, 0); padding-bottom:10px;">
+            <img src="Logo.png" width="5%" style="float:left; margin-top:25px;" class="img-responsive">
+            <span> <img src="header.png" width="30%" height="100px" class="img-responsive"></span>
+        </div>
+         <br>
+        <br>
+        
+        <center>
+            <div>
+             <h2 id="about">COMPARATIVE and SUPERLATIVE ADJECTIVES</h2>
+            </div>
+          
+            <div class="maindiv container-fluid" style="height:60%;">
+             <center>
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-11 imgdiv">
+                    <img id="family" src="pic2.jpg" style="width:100%;"> 
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-11" id='storydiv'>
+                 <p id="story" style="text-align:left; width:100%;">
+              
+                    Comparison helps us get results for our decisions
+                    in everyday life and in important matters too. <br><br>
+
+                    The words that help us do these comparisons are called
+                    <b style="color:blue">COMPARATIVE ADJECTIVES</b> and <b style="color:blue">SUPERLATIVE ADJECTIVES.</b>
+
+                 </p> 
+                </div>
+             </center>
+            </div>
+            <br>
+            <button id="backbtn" onclick="backpic()" class="btn btn-success">Back</button>
+            <button id="nextbtn" onclick="update()" class="btn btn-success">Continue</button>
+            <button id="newbtn" onclick="newpage()" class="btn btn-success">Next</button>
+       
+            </center>   
+
+            <script>
+
+              var images = ["Assests/1.jpg", "Assests/2.jpg", "Assests/3.jpg", "Assests/4.jpg", "Assests/5.jpg", "Assests/6.jpg", "Assests/7.jpg", "Assests/8.jpg", "Assests/9.jpg", "Assests/10.jpg", "Assests/11.jpg", "Assests/12.jpg"];
+              var para=["In a town called Moreton lived three friends called John, Harry and Graham. <br>One winter, a girl called Julie moved into the little cottage, at the end of their street. <br> They thought she was the quirkiest girl in the whole world. Julie could turn things into gold by her glance for anyone who could make her happy or impress her. From that day, everything they did was just to impress Julie. <br> First they tried to impress her with poems. John wrote a long poem, Harry wrote a longer poem, and Graham wrote the longest poem in the whole world.",                
+                      "Then they tried music. <br>John played a loud guitar, Harry played a louder trumpet, and Graham played the loudest drum in the whole world. <br> <br>Then they decided to show off their engineering skills. John made a fast go kart, Harry made a faster go kart, and Graham made the fastest go kart in the whole world.",
+                      "In the first part of the story, we read that the three friends thought that Julie was the <i style='color:blue'>quirkiest</i> girl in the world. <br> <br>It seems that they compared Julies’s personality to the personality of all other girls in the world before coming to this conclusion. <br> <br>When a quality- negative, neutral or positive seems to top the list of your selections, <u style='color:red'>Superlative adjectives</u> are used to express that.",
+                      "If Julie’s personality had not been compared to anybody else’s personality the three friends could have just said: <br> <i style='color:blue'>Julie is a quirky girl.</i> <br> <br>So we can see that the <i style='color:red'>positive degree</i> of comparison is used to define the quality of a noun, when there is <u>no comparison </u> of that quality of another noun. ",
+
+                      "If the three friend’s had compared Julie’s personality with someone else’s beauty, then they would have said: <i style='color:blue'>Julie is quirkier than Sara. </i> <br><br>Julie is superior in having a quirky personality than Sara. Thus, we can see that the comparative degree of comparison is used to express a superior and specific difference between two nouns. <br>We must keep in mind that while using the <u style='color:red'>‘comparative degree adjectives’</u> in sentences we must use the word ‘than’ otherwise we will not be able to form the sentence.",
+                      "Finally, they thought she'd definitely be impressed by circus skills. <br>John juggled something dangerous, Harry juggled something more dangerous, and Graham invented the most dangerous juggling trick ever.", 
+                      "The next day was Julie’s birthday party. So John bought a big present, Harry bought a bigger present, and Graham bought the biggest present in the whole world, and they all arrived nice and early and ready to impress, but Julie's garden was small, her cottage was smaller, and her door was the smallest on the street, so there was no space for huge presents, for juggling, for go karts, or for guitars, trumpets and drums. <br>There was room for poems, but not for poems as long as John’s, Harry’s and Graham’s.",
+
+                      "DISCUSSION: FORMATION <br> <br> Let us look at the sentence below from the story:<i style='color:blue'> “John juggled something dangerous, Harry juggled something more dangerous, and Graham invented the most dangerous juggling trick ever.”</i> <br> It talks about impressing Julie with circus skills. Let's arrange the quality of the juggling tricks of John, Harry and Graham, in a table as per the degree of comparison <br> 👈",
+
+                      "INTERESTING: <br>Did you notice that the  adjective <i style='color:blue;'> “dangerous” </i> uses <u> “more” </u> and <u> “most” </u> in its Comparative form and Superlative form respectively ?<br><br>The rule is that: <br> <br> When the degree of comparison happens with adjectives having two or more than two syllables, they simply use “more” before their comparative forms and “most” before their Superlative forms. Let us look at the table for some examples:",
+
+
+                      "DISCUSSION: FORMATION <br><br>In the story we read that the three friends wanted to impress Julie by giving her birthday gifts.<br> Let us notice the size of the gifts in the line below from the story <i style=color:'blue'>“So John bought a big present, Harry bought a bigger present, and Graham bought the biggest present in the whole world...”</i> <br> Let’s arrange the size of the birthday gifts brought for Julie by John, Harry and Graham, in a table as per the degree of comparison:",
+
+                      "<u>RULE:</u> <br>For adjectives like “Big”, the structure of the word is :<br> Consonant + Vowel + Consonant <br><br>B + I + G = BIG <br> <br>In adjectives like these, there is only one syllable and the last consonant gets doubled in the Comparative form before addition of the suffix “er” and before addition of the suffix “est” in the Superlative form. Let’s see few examples to understand this:",
+                    ]
+            
+            
+            var i = -1;
+            function update(){
+                i++
+                document.getElementById("backbtn").style.display="inline-block"
+                if(i > para.length-1){
+                    document.getElementById("nextbtn").style.display="none"
+                    document.getElementById("newbtn").style.display="inline-block"
+                    document.getElementById("family").src = "last.jpg";
+                    document.getElementById("story").style.fontSize="22px"
+                    document.getElementById("about").innerHTML = "All for Julie, The Magical girl ";
+                    document.getElementById("story").innerHTML = "So they took everything back home, went into Julie’s house with nothing and had to have a tea party with Julie’s little tea set, eat Julie’s little cakes, play music on a little toy piano, and make new, smaller presents with origami. But they had the most fun all year, and when they left they were the happiest ever, and John, Harry and Graham were the best of friends";
+                }
+                else{
+                    document.getElementById("story").style.fontSize="22px"
+                    document.getElementById("story").style.backgroundColor="white"
+                    document.getElementById("about").innerHTML="All for Julie, The Magical girl"
+                     var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+              
+            }
+            };
+
+            function newpage(){
+                window.location="ac2.html"
+            }
+
+            function backpic(){
+                i=i-1
+                console.log(i)
+
+                if(i<0){
+                    document.getElementById("story").style.fontSize="22px"
+                   // document.getElementById("story").style.backgroundColor="lightblue"
+                    document.getElementById("backbtn").style.display="none"
+                    document.getElementById("nextbtn").style.display="inline-block"
+                    document.getElementById("family").src = "pic2.jpg";
+                    document.getElementById("about").innerHTML="COMPARATIVE and SUPERLATIVE ADJECTIVES"
+                    document.getElementById("story").innerHTML = 'Comparison helps us get results for our decisions in everyday life and in important matters too. <br><br> The words that help us do these comparisons are called COMPARATIVE ADJECTIVES and SUPERLATIVE ADJECTIVES.';
+                }
+                else{
+                document.getElementById("story").style.fontSize="22px"
+                document.getElementById("story").style.backgroundColor="white"
+                document.getElementById("nextbtn").style.display="inline-block"
+                var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+                }
+            }
+
+    
+    </script>
+        
+    </body>
+</html>
